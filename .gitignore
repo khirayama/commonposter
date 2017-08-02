@@ -1,0 +1,12 @@
+/* api */
+/web/.envrc
+/api/node_modules
+
+/* web */
+/web/.envrc
+/web/node_modules
+/web/dist
+
+/* android */
+
+/* ios */
