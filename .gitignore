@@ -1,3 +1,5 @@
+.DS_Store
+
 /* api */
 /api/.envrc
 /api/node_modules
@@ -8,5 +10,13 @@
 /web/dist
 
 /* android */
+/android/*.iml
+/android/.gradle
+/android/local.properties
+/android/.idea/workspace.xml
+/android/.idea/libraries
+/android/build
+/android/captures
+/android/.externalNativeBuild
 
 /* ios */
