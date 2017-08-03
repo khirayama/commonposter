@@ -10,7 +10,7 @@
 /web/dist
 
 /* android */
-/android/*.iml
+/android/**/*.iml
 /android/.gradle
 /android/local.properties
 /android/.idea/workspace.xml
