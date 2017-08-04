@@ -18,5 +18,6 @@
 /android/build
 /android/captures
 /android/.externalNativeBuild
+/android/app/src/main/res/values/secrets.xml
 
 /* ios */

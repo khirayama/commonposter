@@ -1,4 +1,3 @@
 <resources>
     <string name="app_name">Commonposter</string>
-    <string name="auth0_scheme">commonposter</string>
 </resources>
