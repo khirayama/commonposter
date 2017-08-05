@@ -33,13 +33,6 @@ app.get('/public', (req, res) => {
 });
 
 app.get('/private', checkJwt, (req, res) => {
-  // const authorization = req.headers.authorization;
-  // const kv = authorization.split(' ');
-  // const jwts = require('jwt-simple');
-  // if (kv[0] === 'Bearer') {
-  //   console.log(kv[1]);
-  //   console.log(jwts.decode(kv[1], '', 'RS256'));
-  // }
   res.json({
     message: 'private api',
   });
