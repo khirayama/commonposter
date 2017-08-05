@@ -16,25 +16,86 @@ import com.auth0.android.provider.AuthCallback;
 import com.auth0.android.provider.WebAuthProvider;
 import com.auth0.android.result.Credentials;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 public class MainActivity extends AppCompatActivity {
-    private TextView token;
+    private TextView tokenView;
+    private String token;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        token = (TextView) findViewById(R.id.token);
+
+        tokenView = (TextView) findViewById(R.id.token);
+
         Button loginButton = (Button) findViewById(R.id.loginButton);
+        Button publicAPIButton = (Button) findViewById(R.id.publicAPIButton);
+        Button privateAPIButton = (Button) findViewById(R.id.privateAPIButton);
+
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 login();
             }
         });
+        publicAPIButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Retrofit retrofit = new Retrofit.Builder()
+                        .baseUrl("http://172.16.153.103:3001/")
+                        .addConverterFactory(GsonConverterFactory.create())
+                        .build();
+                IPublicMessageService service = retrofit.create(IPublicMessageService.class);
+
+                Call<Message> messageCall = service.publicAPI();
+                messageCall.enqueue(new Callback<Message>() {
+                    @Override
+                    public void onResponse(Call<Message> call, Response<Message> response) {
+                        Message message = response.body();
+                        System.out.println("success");
+                        System.out.println(message.message);
+                    }
+
+                    @Override
+                    public void onFailure(Call<Message> call, Throwable t) {
+                        System.out.println(t);
+                    }
+                });
+            }
+        });
+        privateAPIButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Retrofit retrofit = new Retrofit.Builder()
+                        .baseUrl("http://172.16.153.103:3001/")
+                        .addConverterFactory(GsonConverterFactory.create())
+                        .build();
+                IPublicMessageService service = retrofit.create(IPublicMessageService.class);
+
+                Call<Message> messageCall = service.privateAPI("Bearer " + token);
+                messageCall.enqueue(new Callback<Message>() {
+                    @Override
+                    public void onResponse(Call<Message> call, Response<Message> response) {
+                        Message message = response.body();
+                        System.out.println(message.message);
+                    }
+
+                    @Override
+                    public void onFailure(Call<Message> call, Throwable t) {
+                        System.out.println(t);
+                    }
+                });
+            }
+        });
     }
 
     private void login() {
-        token.setText("Not logged in");
+        tokenView.setText("Not logged in");
 
         Auth0 auth0 = new Auth0(this);
         auth0.setOIDCConformant(true);
@@ -66,10 +127,12 @@ public class MainActivity extends AppCompatActivity {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                token.setText("Logged in: " + credentials.getAccessToken());
+                                tokenView.setText("Logged in: " + credentials.getAccessToken());
+                                token = credentials.getIdToken();
                             }
                         });
                     }
                 });
     }
 }
+

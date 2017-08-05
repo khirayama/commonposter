@@ -21,6 +21,20 @@
             android:layout_marginTop="60dp"
             android:text="Show Log in" />
 
+        <Button
+            android:id="@+id/publicAPIButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:text="Public" />
+
+        <Button
+            android:id="@+id/privateAPIButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:text="Private" />
+
         <TextView
             android:id="@+id/token"
             android:layout_width="match_parent"
