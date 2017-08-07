@@ -10,9 +10,7 @@
 		BA5A45AE1F36056F002FB0A4 /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA5A45AD1F36056F002FB0A4 /* Auth0.plist */; };
 		BADBB6191F359F4E00EE63B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADBB6181F359F4E00EE63B7 /* AppDelegate.swift */; };
 		BADBB61B1F359F4E00EE63B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADBB61A1F359F4E00EE63B7 /* ViewController.swift */; };
-		BADBB61E1F359F4E00EE63B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BADBB61C1F359F4E00EE63B7 /* Main.storyboard */; };
 		BADBB6201F359F4E00EE63B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BADBB61F1F359F4E00EE63B7 /* Assets.xcassets */; };
-		BADBB6231F359F4E00EE63B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BADBB6211F359F4E00EE63B7 /* LaunchScreen.storyboard */; };
 		D23088453BCDB9A3E33FF817 /* Pods_Commonposter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71CEBC6B24E98CF6BFF6B58B /* Pods_Commonposter.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,9 +22,7 @@
 		BADBB6151F359F4E00EE63B7 /* Commonposter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Commonposter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BADBB6181F359F4E00EE63B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BADBB61A1F359F4E00EE63B7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		BADBB61D1F359F4E00EE63B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BADBB61F1F359F4E00EE63B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BADBB6221F359F4E00EE63B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BADBB6241F359F4E00EE63B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,9 +70,7 @@
 			children = (
 				BADBB6181F359F4E00EE63B7 /* AppDelegate.swift */,
 				BADBB61A1F359F4E00EE63B7 /* ViewController.swift */,
-				BADBB61C1F359F4E00EE63B7 /* Main.storyboard */,
 				BADBB61F1F359F4E00EE63B7 /* Assets.xcassets */,
-				BADBB6211F359F4E00EE63B7 /* LaunchScreen.storyboard */,
 				BADBB6241F359F4E00EE63B7 /* Info.plist */,
 				BA5A45AD1F36056F002FB0A4 /* Auth0.plist */,
 			);
@@ -153,9 +147,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BADBB6231F359F4E00EE63B7 /* LaunchScreen.storyboard in Resources */,
 				BADBB6201F359F4E00EE63B7 /* Assets.xcassets in Resources */,
-				BADBB61E1F359F4E00EE63B7 /* Main.storyboard in Resources */,
 				BA5A45AE1F36056F002FB0A4 /* Auth0.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -198,7 +190,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		7E7684C7E64F0011483ABFEF /* [CP] Copy Pods Resources */ = {
@@ -229,25 +221,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		BADBB61C1F359F4E00EE63B7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BADBB61D1F359F4E00EE63B7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		BADBB6211F359F4E00EE63B7 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BADBB6221F359F4E00EE63B7 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		BADBB6251F359F4E00EE63B7 /* Debug */ = {
