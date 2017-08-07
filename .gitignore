@@ -4,10 +4,12 @@
 /api/.envrc
 /api/node_modules
 
+
 /* web */
 /web/.envrc
 /web/node_modules
 /web/dist
+
 
 /* android */
 /android/**/*.iml
@@ -18,7 +20,9 @@
 /android/build
 /android/captures
 /android/.externalNativeBuild
+
 /android/app/src/main/res/values/secrets.xml
+
 
 /* ios */
 /ios/Commonposter/build/
@@ -41,3 +45,5 @@
 /ios/Commonposter/Podfile.lock
 /ios/Commonposter/*.swp
 /ios/Commonposter/!.gitkeep
+
+/ios/Commonposter/Commonposter/Auth0.plist
